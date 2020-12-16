@@ -1,0 +1,47 @@
+.form {
+  padding: 30px 0;
+  background-color: #2d3651;
+  &__container {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-gap: 20px;
+
+    @extend %container;
+  }
+
+  &-item {
+
+    &__input {
+
+      display: block;
+      width: 100%;
+      height: $gap * 3;
+      padding-right: 30px;
+      padding-left: 30px;
+      letter-spacing: 0.15em;
+      color: $color-light;
+      border: 2px solid rgba(255, 255, 255, 0);
+      border-bottom-color: rgba(255, 255, 255, 0.25);
+      background-color: rgba(255, 255, 255, 0.05);
+      font-size: 1.125rem;
+      transition: background-color 0.5s, border-color 0.5s;
+    }
+  }
+
+  .btn-accent {
+
+    width: 100%;
+    color: $color-light;
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+
+    &:focus,
+    &:hover
+    {
+      background-color: $color-accent;
+      border-color: $color-light;
+    }
+  }
+
+}
