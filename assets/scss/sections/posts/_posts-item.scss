@@ -1,17 +1,19 @@
 .post-item {
+display: block;
   transition: background-color 0.5s;
-  background-color: rgba(99, 117, 136);
 
   &:hover {
-    .post-item {
-      background-color: rgba(99, 117, 136, 0.1);
-      transform: scale(1.1);
-    }
     .post-item__image {
       transform: scale(1.1);
+      cursor: pointer;
     }
     .post-item__text {
       color: $color-primary;
+    }
+
+    .post-item__link {
+      background-color: $color-gray-light;
+      cursor: pointer;
     }
 
   }
@@ -19,46 +21,61 @@
   &__link {
 
     display: grid;
+    overflow: hidden;
     height: 100%;
-    transition: transform 0.5s;
     grid-template-rows: 300px 1fr;
+    text-decoration: none;
+    background-color: $color-gray-light;
+    transition: background-color 0.5s;
+
+    @include sm {
+
+      margin-top: 1px;
+    }
   }
 
   &__image {
+    transition: transform 0.5s;
     display: flex;
     overflow: hidden;
     align-content: center;
     justify-content: center;
-    transition: transform 0.5s;
 
     & img {
       width: 100%;
       transition: transform 0.5s;
       object-fit: cover;
+      height: 300px;
     }
 
   }
 
   &__text {
     display: grid;
-    align-content: center;
-    //padding: $gap;
+    align-self: center;
+    transition: color 0.5s;
+    text-align: center;
+    font-family: $font-header;
+    padding: $gap;
+
 
 
     & h3 {
-      color: $color-gray;
-      font-family: $font-header;
-      margin: auto;
       letter-spacing: 0.05em;
+      color: $color-gray;
       font-size: 1.125rem;
-      text-align: center;
+      margin: 18px 0;
+      //text-align: center;
     }
 
     & p {
-      text-align: center;
-      padding: 0;
-      color: $color-gray;
+      font-family: $font-main;
+      transition: color 0.5s;
       letter-spacing: 0.005em;
+      text-align: center;
+      color: $color-gray;
+      font-size: 1em;
+      line-height: 1.15;
 
     }
 
@@ -72,5 +89,3 @@
     grid-area: p#{$i};
   }
 }
-
-//коммитa

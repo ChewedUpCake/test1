@@ -1,7 +1,6 @@
 .posts {
 
-  background-color: $color-light;
-
+padding: $gap*5;
 
   @include lg-min {
     padding-top: $gap * 5;
@@ -21,14 +20,19 @@
   &__container {
 
     @extend %container;
+    flex-flow: column;
+    padding-right: $gap;
+    padding-left: $gap;
 
     & h2 {
       font-family: $font-header;
-      //font-weight: 900;
-      line-height: 1.2em;
+      max-height: 48px;
+      width: 100%;
+      margin-bottom: 56px;
       letter-spacing: 0.1em;
+      line-height: 1.2em;
       color: $color-primary;
-      margin-top: 0;
+
 
       @include lg-min {
         font-size: 2.5rem;
@@ -50,31 +54,84 @@
 
       @include sm {
 
-        font-size: 1.5rem;
-        margin-bottom: 36px;
+        margin-top: -1px;
         text-align: center;
       }
     }
   }
 
   &__grid {
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
     grid-gap: $gap;
     padding-bottom: $gap;
+
+    @include lg-min {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+
+
     }
 
-  &__button
-  {
-    display: flex;
+    @include lg-md {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
 
+    }
+
+    @include md-sm {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+
+    }
+
+    @include sm {
+      grid-template-columns: 1fr;
+      grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+
+    }
+  }
+
+  &__button  {
+    display: flex;
     justify-content: center;
     @include sm-min
     {
-      margin-top: 30px;
-      margin-bottom: 30px;
+      padding: 0 $gap;
+      //margin-top: 30px;
+      //margin-bottom: 30px;
+    }
+
+
+    .btn-accent {
+      min-width: 350px;
+      height: 60px;
+      border: 2px solid $color-primary;
+      font-size: 1.125rem;
+      font-family: $font-main;
+      letter-spacing: 0.1em;
+      text-align: center;
+      background-color: rgba(45, 54, 81, 0.8);
+      padding: 18px;
+      transition: background-color 0.5s;
+
+
+      &:hover,
+      &:focus {
+        background-color: $color-accent;
+      }
+    }
+    @include sm-min
+    {
+      padding: 18px $gap;
+    }
+
+    @include sm {
+      padding: 18px $gap;
+      width: 100%;
+
     }
   }
+
 }
 
