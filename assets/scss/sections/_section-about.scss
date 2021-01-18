@@ -20,8 +20,7 @@
         padding-bottom: $gap * 3;
     }
 
-    &__container
-    {
+    &__container {
         @extend %container;
 
         display: grid;
@@ -46,33 +45,7 @@
         }
     }
 
-    &__content
-    {
-        & h2 {
-            font-family: $font-header;
-            //font-weight: 900;
-            line-height: 1.2em;
-            letter-spacing: 0.1em;
-            color: $color-primary;
-            margin-top: 0;
-
-            @include lg-min
-            {
-                font-size: 2.5rem;
-                margin-bottom: 56px;
-            }
-
-            @include lg-md
-            {
-                font-size: 2rem;
-            }
-
-            @include md
-            {
-                font-size: 1.5rem;
-            }
-        }
-
+    &__content    {
         p {
             font-size: 1.125rem;
 
@@ -87,7 +60,7 @@
                     width: 2px;
                     height: 200px;
                     content: "";
-                    background-color: rgba(99, 117, 136, 0.1);
+                    background-color: rgba($color-gray, 0.1);
 
                     @include lg-min {
                         right: -50px;
@@ -107,6 +80,9 @@
 
                     }
                 }
+            }
+            &:last-of-type {
+                margin: 0;
             }
         }
     }

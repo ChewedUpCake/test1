@@ -38,17 +38,48 @@ h1
     }
 }
 
-h2
-{
- margin-top: 0;
+h2 {
+    letter-spacing: 0.1em;
+
+    color: $color-primary;
+
+    font-family: $font-header;
+    line-height: 1.2em;
+
+    @include lg-min {
+        margin-bottom: $gap * 2.8;
+
+        font-size: 2.5rem;
+    }
+    @include lg-md {
+        margin-bottom: $gap * 2.1;
+
+        font-size: 2rem;
+    }
+    @include md-sm {
+        margin-bottom: $gap * 1.8;
+
+        font-size: 1.5rem;
+    }
+    @include sm {
+        margin-bottom: $gap * 1.8;
+
+        text-align: center;
+
+        font-size: 1.5rem;
+    }
+}
+
+h3 {
+    letter-spacing: 0.05em;
+
+    color: $color-gray;
+
+    font-size: 1.125rem;
 }
 
 p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
+    color: $color-gray;
 }
 
 a
@@ -76,8 +107,26 @@ a
 
 .btn
 {
-    border: 2px solid $color-light;
-    background-color: rgba($color-light, .1);
+    //border: 2px solid $color-light;
+    //background-color: rgba($color-light, .1);
+    display: block;
+
+    height: 60px;
+    padding: 18px $gap;
+
+    transition: background-color 0.5s, border-color 0.5s;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+    border-width: 2px;
+    border-style: solid;
+
+    font-size: 1.125rem;
+
+    &:hover,
+    &:focus {
+        background-color: $color-accent;
+    }
 
     @include lg-min
     {

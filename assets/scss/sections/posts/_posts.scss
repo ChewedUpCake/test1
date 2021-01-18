@@ -1,137 +1,94 @@
 .posts {
 
-padding: $gap*5;
-
   @include lg-min {
     padding-top: $gap * 5;
     padding-bottom: $gap * 5;
   }
-
   @include lg-md {
     padding-top: $gap * 4;
     padding-bottom: $gap * 4;
   }
-
   @include md {
     padding-top: $gap * 3;
     padding-bottom: $gap * 3;
   }
 
+  h2 {
+    margin-top: 0;
+  }
+
+
   &__container {
-
     @extend %container;
-    flex-flow: column;
-    padding-right: $gap;
-    padding-left: $gap;
+    //flex-flow: column;
+    //padding-right: $gap;
+    //padding-left: $gap;
 
-    & h2 {
-      font-family: $font-header;
-      max-height: 48px;
-      width: 100%;
-      margin-bottom: 56px;
-      letter-spacing: 0.1em;
-      line-height: 1.2em;
-      color: $color-primary;
 
+    &__grid {
+      //position: relative;
+      display: grid;
+      grid-gap: $gap;
+      padding-bottom: $gap;
 
       @include lg-min {
-        font-size: 2.5rem;
-        margin-bottom: 56px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+
 
       }
 
       @include lg-md {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
 
-        font-size: 2rem;
-        margin-bottom: 42px;
       }
 
       @include md-sm {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
 
-        font-size: 1.5rem;
-        margin-bottom: 36px;
       }
 
       @include sm {
+        grid-template-columns: 1fr;
+        grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
 
-        margin-top: -1px;
-        text-align: center;
       }
     }
-  }
 
-  &__grid {
-    position: relative;
-    display: grid;
-    grid-gap: $gap;
-    padding-bottom: $gap;
+    &__button {
 
-    @include lg-min {
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+      display: block;
 
-
-    }
-
-    @include lg-md {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
-
-    }
-
-    @include md-sm {
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
-
-    }
-
-    @include sm {
-      grid-template-columns: 1fr;
-      grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
-
-    }
-  }
-
-  &__button  {
-    display: flex;
-    justify-content: center;
-    @include sm-min
-    {
-      padding: 0 $gap;
-      //margin-top: 30px;
-      //margin-bottom: 30px;
-    }
-
-
-    .btn-accent {
-      min-width: 350px;
       height: 60px;
-      border: 2px solid $color-primary;
-      font-size: 1.125rem;
-      font-family: $font-main;
-      letter-spacing: 0.1em;
-      text-align: center;
-      background-color: rgba(45, 54, 81, 0.8);
-      padding: 18px;
-      transition: background-color 0.5s;
+      padding: 18px $gap;
 
+      transition: background-color 0.5s, border-color 0.5s;
+      text-align: center;
+      letter-spacing: 0.1em;
+
+      border-width: 2px;
+      border-style: solid;
+
+      font-size: 1.125rem;
 
       &:hover,
       &:focus {
         background-color: $color-accent;
       }
-    }
-    @include sm-min
-    {
-      padding: 18px $gap;
-    }
 
-    @include sm {
-      padding: 18px $gap;
-      width: 100%;
+      @include sm-min {
+        display: flex;
+        justify-content: center;
+        min-width: 350px;
+      }
+      @include sm {
+        width: 100%;
+      }
+
 
     }
   }
-
 }
 
