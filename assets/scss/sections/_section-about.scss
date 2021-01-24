@@ -1,5 +1,4 @@
-.about
-{
+.about {
     letter-spacing: 0.055em;
 
     background-color: $color-gray-light;
@@ -49,7 +48,7 @@
         p {
             font-size: 1.125rem;
 
-            & p:first-of-type {
+            &:first-of-type {
                 position: relative;
 
                 margin-top: -5px;

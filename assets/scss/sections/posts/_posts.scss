@@ -23,38 +23,36 @@
     //flex-flow: column;
     //padding-right: $gap;
     //padding-left: $gap;
+    }
+  &__grid {
+    //position: relative;
+    display: grid;
+    grid-gap: $gap;
+    padding-bottom: $gap;
+
+    @include lg-min {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
 
 
-    &__grid {
-      //position: relative;
-      display: grid;
-      grid-gap: $gap;
-      padding-bottom: $gap;
+    }
 
-      @include lg-min {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+    @include lg-md {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
 
+    }
 
-      }
+    @include md-sm {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
 
-      @include lg-md {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+    }
 
-      }
+    @include sm {
+      grid-template-columns: 1fr;
+      grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
 
-      @include md-sm {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
-
-      }
-
-      @include sm {
-        grid-template-columns: 1fr;
-        grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
-
-      }
     }
 
     &__button {
