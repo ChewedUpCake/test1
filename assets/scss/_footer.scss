@@ -5,6 +5,8 @@
 
   background-color: $color-primary;
 
+  letter-spacing: normal;
+
   &__container {
     @extend %container;
   }

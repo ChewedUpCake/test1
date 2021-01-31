@@ -5,12 +5,12 @@
 
 
     @include lg-min {
-        padding-top: $gap * 5;
+        padding-top: $gap * 5;  //67px
         padding-bottom: $gap * 5;
     }
 
     @include lg-md {
-        padding-top: $gap * 4;
+        padding-top: $gap * 4; //65px
         padding-bottom: $gap * 4;
     }
 
@@ -45,6 +45,9 @@
     }
 
     &__content    {
+        h2 {
+            margin-top: 0;
+        }
         p {
             @include lg-min {
                 font-size: 1.125rem;

@@ -78,4 +78,11 @@
     }
   }
 
+  .btn--primary {
+
+    @include sm-min {
+      min-width: auto;
+    }
+
+  }
 }
