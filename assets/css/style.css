@@ -529,6 +529,8 @@ a {
 }
 
 .btn {
+  border: 2px solid #fff;
+  background-color: rgba(255, 255, 255, 0.1);
   display: block;
   height: 60px;
   padding: 18px 20px;
@@ -546,11 +548,13 @@ a {
   background-color: #d66926;
 }
 
-.btn-accent {
-  font-size: 1.125rem;
-  height: 60px;
-  padding: 18px 20px;
-  border: 2px solid #2d3651;
+.btn--light {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn--primary {
+  border-color: #2d3651;
   background-color: rgba(45, 54, 81, 0.8);
 }
 
@@ -560,8 +564,9 @@ a {
   min-height: 100vh;
   padding-top: 100px;
   padding-bottom: 100px;
+  color: #fff;
   background-color: #2d3651;
-  background-image: url(../img/img-header.png);
+  background-image: url(../../img/img-header.png);
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -729,6 +734,8 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -743,15 +750,6 @@ a {
   display: grid;
   margin-bottom: 20px;
   grid-auto-rows: calc(33.333vh - 13.333px);
-}
-
-.skills__button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .skill-item {
@@ -881,10 +879,6 @@ a {
   display: grid;
 }
 
-.about__content p {
-  font-size: 1.125rem;
-}
-
 .about__content p:first-of-type {
   position: relative;
   margin-top: -5px;
@@ -942,34 +936,33 @@ a {
   transition: background-color 0.5s, border-color 0.5s;
 }
 
+.form-item__input::-webkit-input-placeholder {
+  color: #637588;
+}
+
+.form-item__input::-moz-placeholder {
+  color: #637588;
+}
+
+.form-item__input:-ms-input-placeholder {
+  color: #637588;
+}
+
+.form-item__input::-ms-input-placeholder {
+  color: #637588;
+}
+
+.form-item__input::placeholder {
+  color: #637588;
+}
+
 .form-item__input:focus, .form-item__input:hover {
-  cursor: pointer;
   border-color: rgba(255, 255, 255, 0.15);
   border-bottom-color: #fff;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-.form-item__input:focus::-webkit-input-placeholder, .form-item__input:hover::-webkit-input-placeholder {
-  color: #8c9bab;
-}
-
-.form-item__input:focus::-moz-placeholder, .form-item__input:hover::-moz-placeholder {
-  color: #8c9bab;
-}
-
-.form-item__input:focus:-ms-input-placeholder, .form-item__input:hover:-ms-input-placeholder {
-  color: #8c9bab;
-}
-
-.form-item__input:focus::-ms-input-placeholder, .form-item__input:hover::-ms-input-placeholder {
-  color: #8c9bab;
-}
-
-.form-item__input:focus::placeholder, .form-item__input:hover::placeholder {
-  color: #8c9bab;
-}
-
-.form .btn-accent {
+.form .btn--primary {
   width: 100%;
   color: #fff;
   border-color: rgba(255, 255, 255, 0);
@@ -977,29 +970,29 @@ a {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.form .btn-accent:focus, .form .btn-accent:hover {
+.form .btn--primary:focus, .form .btn--primary:hover {
   cursor: pointer;
   background-color: #d66926;
   border-color: #fff;
 }
 
-.form .btn-accent:focus::-webkit-input-placeholder, .form .btn-accent:hover::-webkit-input-placeholder {
+.form .btn--primary:focus::-webkit-input-placeholder, .form .btn--primary:hover::-webkit-input-placeholder {
   color: #8c9bab;
 }
 
-.form .btn-accent:focus::-moz-placeholder, .form .btn-accent:hover::-moz-placeholder {
+.form .btn--primary:focus::-moz-placeholder, .form .btn--primary:hover::-moz-placeholder {
   color: #8c9bab;
 }
 
-.form .btn-accent:focus:-ms-input-placeholder, .form .btn-accent:hover:-ms-input-placeholder {
+.form .btn--primary:focus:-ms-input-placeholder, .form .btn--primary:hover:-ms-input-placeholder {
   color: #8c9bab;
 }
 
-.form .btn-accent:focus::-ms-input-placeholder, .form .btn-accent:hover::-ms-input-placeholder {
+.form .btn--primary:focus::-ms-input-placeholder, .form .btn--primary:hover::-ms-input-placeholder {
   color: #8c9bab;
 }
 
-.form .btn-accent:focus::placeholder, .form .btn-accent:hover::placeholder {
+.form .btn--primary:focus::placeholder, .form .btn--primary:hover::placeholder {
   color: #8c9bab;
 }
 
@@ -1189,16 +1182,19 @@ a {
 }
 
 @media (min-width: 576px) {
-  .btn-accent {
+  .btn--primary {
     min-width: 350px;
-  }
-  .header-content__buttons .btn:first-of-type {
-    margin-right: 20px;
   }
   .skills {
     padding: 10px;
   }
   .skills__button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-bottom: 30px;
   }
   .posts__grid__button {
@@ -1237,11 +1233,11 @@ a {
     margin-bottom: 56px;
     font-size: 2.5rem;
   }
-  .btn {
-    font-size: 1.125rem;
+  .header-content__buttons .btn {
     min-width: 250px;
-    height: 60px;
-    padding: 18px 20px;
+  }
+  .header-content__buttons .btn:not(:last-of-type) {
+    margin-right: 20px;
   }
   .header-content__title {
     margin: 0 0 53px 0;
@@ -1258,6 +1254,9 @@ a {
   .about__container {
     grid-template-columns: 1fr 271px;
     grid-gap: 100px;
+  }
+  .about__content p {
+    font-size: 1.125rem;
   }
   .about__content p:first-of-type::after {
     right: -50px;
@@ -1283,10 +1282,16 @@ a {
     margin-bottom: 42px;
     font-size: 2rem;
   }
-  .btn {
+  .header-content__buttons .btn {
     min-width: 200px;
     height: 50px;
-    padding: 14px 20px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    letter-spacing: 0.1em;
+    font-size: 1rem;
+  }
+  .header-content__buttons .btn:not(:last-of-type) {
+    margin-right: 20px;
   }
   .header-content__title {
     margin: 0 0 43px 0;
@@ -1324,11 +1329,6 @@ a {
   h1 {
     font-size: 1.875rem;
   }
-  .btn {
-    min-width: 170px;
-    height: 40px;
-    padding: 9px 20px;
-  }
   .header-menu {
     background-color: rgba(68, 89, 110, 0.25);
   }
@@ -1352,7 +1352,7 @@ a {
     margin: 0 0 33px 0;
   }
   .skill-item__title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
   .about {
     padding-top: 60px;
@@ -1368,6 +1368,17 @@ a {
   h2 {
     margin-bottom: 36px;
     font-size: 1.5rem;
+  }
+  .header-content__buttons .btn {
+    min-width: 170px;
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+  }
+  .header-content__buttons .btn:not(:last-of-type) {
+    margin-right: 20px;
   }
   .skills__container {
     grid-template-areas: 'a1 a2' 'a3 a2' 'a4 a4' 'a5 a6' 'a5 a7' 'a8 a9';
@@ -1405,19 +1416,27 @@ a {
     text-align: center;
     font-size: 1.5rem;
   }
-  .btn-accent {
+  .btn--primary {
     width: 100%;
   }
   .header-content__buttons {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
-  .header-content__buttons .btn:first-of-type {
+  .header-content__buttons .btn {
+    min-width: 170px;
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+  }
+  .header-content__buttons .btn:not(:last-of-type) {
     margin-bottom: 20px;
   }
   .skills {

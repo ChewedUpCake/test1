@@ -1,6 +1,7 @@
 .form {
   padding: 30px 0;
   background-color: $color-primary;
+
   &__container {
 
     display: grid;
@@ -20,6 +21,7 @@
   }
 
   &-item {
+
 
     &:nth-of-type(1) {
       @include md-sm {
@@ -42,21 +44,21 @@
       font-size: 1.125rem;
       transition: background-color 0.5s, border-color 0.5s;
 
+      &::placeholder {
+        color: $color-gray;
+      }
+
       &:focus,
       &:hover {
-        cursor: pointer;
         border-color: rgba($color-light, 0.15);
         border-bottom-color: $color-light;
         background-color: rgba($color-light, 0.15);
 
-        &::placeholder {
-          color: lighten($color-gray, 15%);
-        }
       }
     }
   }
 
-  .btn-accent {
+  .btn--primary {
 
     width: 100%;
     color: $color-light;

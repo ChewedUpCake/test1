@@ -49,11 +49,11 @@
 
     &__button
     {
-        display: flex;
 
-        justify-content: center;
         @include sm-min
-        {
+    {
+            display: flex;
+            justify-content: center;
             margin-bottom: 30px;
         }
     }

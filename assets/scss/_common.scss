@@ -107,8 +107,8 @@ a
 
 .btn
 {
-    //border: 2px solid $color-light;
-    //background-color: rgba($color-light, .1);
+    border: 2px solid $color-light;
+    background-color: rgba($color-light, .1);
     display: block;
 
     height: 60px;
@@ -128,44 +128,61 @@ a
         background-color: $color-accent;
     }
 
-    @include lg-min
-    {
-        font-size: 1.125rem;
-
-        min-width: 250px;
-        height: 60px;
-        padding: 18px $gap;
-    }
-    @include lg-md
-    {
-        min-width: 200px;
-        height: 50px;
-        padding: 14px $gap;
-    }
-    @include md
-    {
-        min-width: 170px;
-        height: 40px;
-        padding: 9px $gap;
-    }
+    //@include lg-min
+    //{
+    //    font-size: 1.125rem;
+    //
+    //    min-width: 250px;
+    //    height: 60px;
+    //    padding: 18px $gap;
+    //}
+    //@include lg-md
+    //{
+    //    min-width: 200px;
+    //    height: 50px;
+    //    padding: 14px $gap;
+    //}
+    //@include md
+    //{
+    //    min-width: 170px;
+    //    height: 40px;
+    //    padding: 9px $gap;
+    //}
 }
 
-.btn-accent
-{
-    font-size: 1.125rem;
+//.btn-accent
+//{
+//    font-size: 1.125rem;
+//
+//    height: 60px;
+//    padding: 18px $gap;
+//
+//    border: 2px solid $color-primary;
+//    background-color: rgba($color-primary, .8);
+//
+//    @include sm-min
+//    {
+//        min-width: 350px;
+//    }
+//    @include sm
+//    {
+//        width: 100%;
+//    }
+//}
 
-    height: 60px;
-    padding: 18px $gap;
+.btn--light {
+    border-color: $color-light;
+    background-color: rgba($color-light, 0.1);
+}
 
-    border: 2px solid $color-primary;
-    background-color: rgba($color-primary, .8);
+.btn--primary {
+    border-color: $color-primary;
+    background-color: rgba($color-primary, 0.8);
 
-    @include sm-min
-    {
+    @include sm-min {
         min-width: 350px;
     }
-    @include sm
-    {
+    @include sm {
         width: 100%;
     }
 }

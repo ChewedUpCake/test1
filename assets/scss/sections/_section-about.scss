@@ -46,7 +46,9 @@
 
     &__content    {
         p {
-            font-size: 1.125rem;
+            @include lg-min {
+                font-size: 1.125rem;
+            }
 
             &:first-of-type {
                 position: relative;
@@ -86,8 +88,7 @@
         }
     }
 
-    &__img
-    {
+    &__img    {
         display: grid;
         align-content: center;
         justify-items: center;
