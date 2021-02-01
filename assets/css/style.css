@@ -960,7 +960,14 @@ a {
   color: #637588;
 }
 
-.form-item__input:focus, .form-item__input:hover {
+.form-item__input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.15);
+  border-bottom-color: #fff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-item__input:hover {
   border-color: rgba(255, 255, 255, 0.15);
   border-bottom-color: #fff;
   background-color: rgba(255, 255, 255, 0.15);

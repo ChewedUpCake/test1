@@ -48,7 +48,13 @@
         color: $color-gray;
       }
 
-      &:focus,
+      &:focus {
+        outline: none;
+        border-color: rgba($color-light, 0.15);
+        border-bottom-color: $color-light;
+        background-color: rgba($color-light, 0.15);
+
+      }
       &:hover {
         border-color: rgba($color-light, 0.15);
         border-bottom-color: $color-light;
